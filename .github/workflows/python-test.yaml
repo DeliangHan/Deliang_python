@@ -1,0 +1,17 @@
+# create pipeline with some name 
+name: Deliang python app containerization pipeline 
+# Trigger -- when this pipeline should start
+on:
+  push:
+    branches:
+      - "main"
+
+# jobs for performing operatiosn 
+jobs:
+  ashu-image-build:
+    runs-on: ubuntu-latest
+    # this server will be provision by github backen for this job
+    steps:
+      - name: check python version
+        run: python -V
+          
