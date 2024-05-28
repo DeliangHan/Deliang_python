@@ -9,9 +9,17 @@ on:
 # jobs for performing operatiosn 
 jobs:
   ashu-image-build:
-    runs-on: ubuntu-latest
+    #runs-on: ubuntu-latest
     # this server will be provision by github backen for this job
+    #steps:
+      #- name: check python version
+       # run: python -V
+  
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest,windows-latest,macos-latest]
     steps:
-      - name: check python version
-        run: python -V
+      - name: checking python version on platform ${{ matrix.os }}
+        run: python -V 
           
